@@ -1,8 +1,14 @@
 <template>
   <div class="container">
     <header class="header">
-      <div class="header-logo">GUANDIAN</div>
-      <md-tabs class="md-primary" md-alignment="fixed">
+      <div class="header-logo">
+        <div class="search-container">
+          <input class="header-search-input" type="text" placeholder="感兴趣的话题"/>
+          <span class="header-search-line"></span>
+          <button class="header-search-button material-icons">search</button>
+        </div>
+      </div>
+      <md-tabs class="header-tabs md-primary" md-alignment="fixed">
         <md-tab id="tab-attention" md-label="关注"></md-tab>
         <md-tab id="tab-hot" md-label="热点"></md-tab>
       </md-tabs>
@@ -142,10 +148,10 @@
     </div>
     <div class="phone-viewport">
       <md-bottom-bar md-type="shift">
-        <md-bottom-bar-item id="bottom-bar-item-home" md-label="首页" md-icon="1"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-pages" md-label="想法" md-icon="2"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-posts" md-label="通知" md-icon="3"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-favorites" md-label="我的" md-icon="4"></md-bottom-bar-item>
+        <md-bottom-bar-item id="bottom-bar-item-home" md-label="首页" md-icon="loyalty"></md-bottom-bar-item>
+        <md-bottom-bar-item id="bottom-bar-item-pages" md-label="功能" md-icon="style"></md-bottom-bar-item>
+        <md-bottom-bar-item id="bottom-bar-item-posts" md-label="消息" md-icon="message"></md-bottom-bar-item>
+        <md-bottom-bar-item id="bottom-bar-item-favorites" md-label="我的" md-icon="face"></md-bottom-bar-item>
       </md-bottom-bar>
     </div>
   </div>
@@ -172,12 +178,54 @@
     z-index: 11;
   }
   .header-logo{
-    height:50px;
+    height:80px;
     background-color: #448aff;
-    font-size: 24px;
+    overflow: hidden;
+  }
+  .search-container{
+    position: relative;
+    margin:20px auto 0 auto;
+    width:90%;
+    height:50px;
+    line-height:50px;
     color:#fff;
-    line-height: 50px;
-    padding-left:20px;
+    background-color: #fff;
+    border-radius:10px;
+  }
+  .header-search-input{
+    float: left;
+    padding:0 5px;
+    width:80%;
+    height:50px;
+    border:0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 16px;
+    -web-kit-appearance:none;
+    -moz-appearance: none;
+  }
+  .header-search-input:focus{
+    outline: none;
+  }
+  .header-search-line{
+    margin:10px 0;
+    float: left;
+    width:2px;
+    height:30px;
+    background-color: #969b88;
+  }
+  .header-search-button{
+    float:left;
+    width: 19%;
+    height:50px;
+    border:0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    color: #969b88;
+  }
+  .header-tabs{
+    height:50px;
   }
   .tab-button{
     flex-grow:1;
@@ -186,13 +234,13 @@
     flex-grow:1;
   }
   .content{
-    margin-top:100px;
+    margin:130px 0 60px 0;
   }
   .phone-viewport {
     position: fixed;
     bottom:0;
     width:100%;
-    hright:50px;
+    height:60px;
     display: inline-flex;
     align-items: flex-end;
     overflow: hidden;
